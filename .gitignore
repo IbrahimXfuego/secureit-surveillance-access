@@ -1,0 +1,7 @@
+.env
+config.h
+.pio/
+node_modules/
+gateway/data/
+*.zip
+__pycache__/
