@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="1110" viewBox="0 0 1500 1110">
+<style>text{font-family:Arial,sans-serif;fill:#20334a}.title{font-size:30px;font-weight:bold}.h{font-size:21px;font-weight:bold}.t{font-size:17px}.s{font-size:14px} .wire{fill:none;stroke:#197a85;stroke-width:2.5}.box{fill:#fff;stroke:#9db1c3;stroke-width:1.5}</style>
+<rect width="1500" height="1110" fill="#f4f7fa"/>
+<text x="40" y="48" class="title">SecureIT | Low-voltage wiring &amp; power</text>
+<text x="40" y="77" class="t">Circuit connections • AI-Thinker ESP32-CAM + NodeMCU ESP8266 • one shared Telegram bot</text>
+<rect x="35" y="105" width="700" height="400" rx="10" class="box"/>
+<text x="51" y="135" class="h">CAMERA MODULE</text>
+<rect x="65" y="165" width="230" height="270" rx="10" class="box"/>
+<text x="81" y="195" class="h">ESP32-CAM</text>
+<text x="80" y="220" class="t">GPIO13</text>
+<path d="M185 215 L330 215" class="wire"/>
+<text x="340" y="220" class="s">PIR OUT · active HIGH*</text>
+<text x="80" y="275" class="t">GPIO14</text>
+<path d="M185 270 L330 270" class="wire"/>
+<text x="340" y="275" class="s">3.3 V-compatible relay interface*</text>
+<text x="80" y="330" class="t">GPIO2</text>
+<path d="M185 325 L330 325" class="wire"/>
+<text x="340" y="330" class="s">DHT11 DATA · pull-up to 3.3 V*</text>
+<text x="80" y="385" class="t">GPIO4</text>
+<path d="M185 380 L330 380" class="wire"/>
+<text x="340" y="385" class="s">Onboard flash LED</text>
+<text x="65" y="467" class="s">Supply A → ESP32-CAM 5V/GND; sensors use their rated rails.</text>
+<text x="65" y="489" class="s">No microSD. GPIO14 relay mapping replaces original GPIO12.</text>
+<rect x="765" y="105" width="700" height="400" rx="10" class="box"/>
+<text x="781" y="135" class="h">ACCESS MODULE</text>
+<rect x="795" y="165" width="230" height="270" rx="10" class="box"/>
+<text x="811" y="195" class="h">ESP8266 NodeMCU</text>
+<text x="810" y="220" class="s">D5 / GPIO14</text>
+<path d="M915 215 L1050 215" class="wire"/>
+<text x="1060" y="220" class="s">Button + external pull-up (below)</text>
+<text x="810" y="275" class="s">D6 / GPIO12</text>
+<path d="M915 270 L1050 270" class="wire"/>
+<text x="1060" y="275" class="s">MG996R signal</text>
+<text x="810" y="330" class="s">D2 / GPIO4</text>
+<path d="M915 325 L1050 325" class="wire"/>
+<text x="1060" y="330" class="s">LCD SDA via level shifter*</text>
+<text x="810" y="385" class="s">D1 / GPIO5</text>
+<path d="M915 380 L1050 380" class="wire"/>
+<text x="1060" y="385" class="s">LCD SCL via level shifter*</text>
+<text x="795" y="467" class="s">Supply B → board-approved input + LCD rated rail.</text>
+<text x="795" y="489" class="s">LCD backpack: 0x27 default; avoid 5 V on MCU I²C pins.</text>
+<rect x="35" y="530" width="700" height="285" rx="10" class="box"/>
+<text x="51" y="560" class="h">BUTTON CIRCUIT · EXTERNAL PULL-UP</text>
+<text x="90" y="595" class="t">3.3 V</text>
+<path d="M120 605 L120 625" class="wire"/>
+<path d="M110 625 H130 V685 H110 Z" fill="white" stroke="#197a85" stroke-width="2.5"/>
+<text x="150" y="655" class="t">R_pullup</text>
+<text x="150" y="679" class="s">10 kΩ suggested pull-up</text>
+<path d="M120 685 L120 715" class="wire"/>
+<path d="M120 715 L390 715" class="wire"/>
+<text x="405" y="721" class="t">D5 / GPIO14</text>
+<circle cx="120" cy="715" r="4" fill="#197a85"/>
+<path d="M120 715 L120 735" class="wire"/>
+<path d="M120 735 L145 760" class="wire"/>
+<path d="M120 770 L120 790" class="wire"/>
+<path d="M100 790 L140 790" class="wire"/>
+<path d="M107 797 L133 797" class="wire"/>
+<path d="M114 804 L126 804" class="wire"/>
+<text x="170" y="760" class="s">Normally-open switch → GND</text>
+<text x="390" y="780" class="s">40 ms stable-edge debounce</text>
+<rect x="765" y="530" width="700" height="285" rx="10" class="box"/>
+<text x="781" y="560" class="h">SERVO POWER · SEPARATE REGULATED SUPPLY</text>
+<rect x="795" y="590" width="225" height="90" rx="10" class="box"/>
+<text x="811" y="620" class="h">Servo supply</text>
+<text x="810" y="655" class="s">Rated voltage + peak current</text>
+<rect x="1195" y="590" width="235" height="90" rx="10" class="box"/>
+<text x="1211" y="620" class="h">MG996R</text>
+<path d="M1020 610 L1195 610" class="wire"/>
+<text x="1055" y="599" class="s">+ motor rail</text>
+<path d="M1020 660 L1195 660" class="wire"/>
+<text x="1045" y="650" class="s">GND / negative</text>
+<path d="M1100 660 L1100 730" class="wire"/>
+<path d="M1100 730 L990 730" class="wire"/>
+<text x="805" y="737" class="s">ESP8266 GND</text>
+<text x="795" y="780" class="s">Do not power the servo from the MCU rail. Do not join supply + outputs.</text>
+<rect x="35" y="840" width="1430" height="220" rx="10" class="box"/>
+<text x="51" y="870" class="h">INTERFACE NOTES &amp; LOAD BOUNDARY</text>
+<text x="60" y="900" class="t">* Confirm exact PIR and relay module. Use only 3.3 V-compatible signals at MCU pins.</text>
+<text x="60" y="932" class="t">5 V LCD backpack: use an I²C level shifter (LV 3.3 V / HV 5 V / common access-side ground).</text>
+<text x="60" y="964" class="t">Camera and access modules communicate over Wi-Fi; no ground/data wire is required between them.</text>
+<text x="60" y="996" class="t">Relay contacts → enclosed, appropriately rated AC load assembly. Mains wiring is outside this diagram.</text>
+<text x="60" y="1028" class="t">Use a low-voltage lamp for initial setup. AC installation requires a qualified person. See docs/wiring.md.</text>
+<text x="40" y="1090" class="s">Firmware pin mapping; see the wiring guide for power and interface details.</text>
+</svg>
