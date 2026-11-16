@@ -1,0 +1,8 @@
+{
+  "name": "secureit-gateway",
+  "version": "1.0.0",
+  "private": true,
+  "description": "One-bot Telegram gateway and local SecureIT dashboard",
+  "engines": { "node": ">=22" },
+  "scripts": { "start": "node --env-file=.env server.mjs", "test": "node --test" }
+}
